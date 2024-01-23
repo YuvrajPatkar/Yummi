@@ -31,10 +31,20 @@ struct ContentView: View {
     let tempIngredient = Ingredient(Name: "Cheese", Quantity: 100, Unit: "grams", Category: "Dairy", ExpiryDate: "08.02.24")
     
     var body: some View {
-        VStack {
-            Text(tempIngredient.displayStats())
+        ZStack{
+            
+            Circle()
+                .fill(.blue)
+            
+            VStack {
+                Text(tempIngredient.displayStats())
+                Text("🧀")
+                    .font(.system(size: 200))
+            }
+            .padding()
+            
+            
         }
-        .padding()
     }
 }
 
