@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Foundation
 
 
 struct ContentView: View {
@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var foodCategory = ""
     @State private var foodExpiryDate = ""
     @State private var foodEmoji = ""
+    
     
     
     var body: some View {
