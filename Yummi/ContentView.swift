@@ -43,7 +43,7 @@ struct ContentView: View {
                 VStack{
                     Text("New food")
                     TextField("Food Name", text: $foodName)
-                    Stepper("Food Quantity: \(foodQuantity)" , value: $foodQuantity)
+                    Stepper("Food Quantity: \(foodQuantity)" , value: $foodQuantity, in: 0...Int.max)
                     TextField("Food Unit", text: $foodUnit)
                     TextField("Food Category", text: $foodCategory)
                     TextField("Food Expiry Date", text: $foodExpiryDate)
@@ -52,14 +52,20 @@ struct ContentView: View {
                 }
                     
                     Button("Add Ingredient") {
+                        foods.append(Ingredient(Name: foodName, Quantity: foodQuantity, Unit: foodUnit, Category: foodCategory, ExpiryDate: foodExpiryDate, Emoji: foodEmoji))
+                        foodName = ""
+                        foodQuantity = 0
+                        foodUnit = ""
+                        foodCategory = ""
+                        foodExpiryDate = ""
+                        foodEmoji = ""
                         
+                        tempIngredientIndex = foods.count - 1
    
-                        
+    
                     }
                 }
-                
             }
-        
     }
 }
 
