@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633C33D62B6906F300FE9A52 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C33D52B6906F300FE9A52 /* Foods.swift */; };
 		6369167E2B5FC61C00409F41 /* YummiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369167D2B5FC61C00409F41 /* YummiApp.swift */; };
 		636916802B5FC61C00409F41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369167F2B5FC61C00409F41 /* ContentView.swift */; };
 		636916822B5FC62000409F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636916812B5FC62000409F41 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		633C33D52B6906F300FE9A52 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
 		6369167A2B5FC61C00409F41 /* Yummi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6369167D2B5FC61C00409F41 /* YummiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiApp.swift; sourceTree = "<group>"; };
 		6369167F2B5FC61C00409F41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				6369167F2B5FC61C00409F41 /* ContentView.swift */,
 				636916812B5FC62000409F41 /* Assets.xcassets */,
 				636916832B5FC62000409F41 /* Preview Content */,
+				633C33D52B6906F300FE9A52 /* Foods.swift */,
 			);
 			path = Yummi;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633C33D62B6906F300FE9A52 /* Foods.swift in Sources */,
 				636916802B5FC61C00409F41 /* ContentView.swift in Sources */,
 				6369167E2B5FC61C00409F41 /* YummiApp.swift in Sources */,
 			);

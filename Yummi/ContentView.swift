@@ -7,44 +7,59 @@
 
 import SwiftUI
 
-struct Ingredient {
-    let Name: String
-    let Quantity: Int
-    let Unit: String
-    let Category: String
-    let ExpiryDate: String
 
-    func displayStats() -> String {
-        return("""
-            Name is \(Name)
-            Quantity is \(Quantity)
-            Unit is \(Unit)
-            Category is \(Category)
-            Expiry date is \(ExpiryDate)
-        """
-        )
-    }
-}
 
 struct ContentView: View {
     
-    let tempIngredient = Ingredient(Name: "Cheese", Quantity: 100, Unit: "grams", Category: "Dairy", ExpiryDate: "08.02.24")
+    @State private var tempIngredientIndex = 0
+    
+    @State private var foodName = ""
+    @State private var foodQuantity = 0
+    @State private var foodUnit = ""
+    @State private var foodCategory = ""
+    @State private var foodExpiryDate = ""
+    @State private var foodEmoji = ""
+    
     
     var body: some View {
-        ZStack{
-            
-            Circle()
-                .fill(.blue)
-            
-            VStack {
-                Text(tempIngredient.displayStats())
-                Text("🧀")
-                    .font(.system(size: 200))
+        VStack(
+            alignment: .leading, spacing: 20) {
+            Form {
+                VStack() {
+                    Text(foods[tempIngredientIndex].displayStats())
+                    Text(foods[tempIngredientIndex].Emoji)
+                        .font(.system(size: 100))
+                    Button("Next food") {
+                        if tempIngredientIndex == foods.count - 1{
+                            tempIngredientIndex = 0
+                        } else {
+                            tempIngredientIndex += 1
+                        }
+                    }
+                }
             }
             .padding()
-            
-            
-        }
+            Form {
+                VStack{
+                    Text("New food")
+                    TextField("Food Name", text: $foodName)
+                    Stepper("Food Quantity: \(foodQuantity)" , value: $foodQuantity)
+                    TextField("Food Unit", text: $foodUnit)
+                    TextField("Food Category", text: $foodCategory)
+                    TextField("Food Expiry Date", text: $foodExpiryDate)
+                    TextField("Food Emoji", text: $foodEmoji)
+                
+                }
+                    
+                    Button("Add Ingredient") {
+                        
+   
+                        
+                    }
+                }
+                
+            }
+        
     }
 }
 
