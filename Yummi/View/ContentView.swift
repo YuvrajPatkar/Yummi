@@ -27,11 +27,11 @@ struct ContentView: View {
             alignment: .leading, spacing: 20) {
             Form {
                 VStack() {
-                    Text(foods[tempIngredientIndex].displayStats())
-                    Text(foods[tempIngredientIndex].Emoji)
+                    Text(Ingredient.foods[tempIngredientIndex].displayStats())
+                    Text(Ingredient.foods[tempIngredientIndex].Emoji)
                         .font(.system(size: 100))
                     Button("Next food") {
-                        if tempIngredientIndex == foods.count - 1{
+                        if tempIngredientIndex == Ingredient.foods.count - 1{
                             tempIngredientIndex = 0
                         } else {
                             tempIngredientIndex += 1
@@ -53,7 +53,7 @@ struct ContentView: View {
                 }
                     
                     Button("Add Ingredient") {
-                        foods.append(Ingredient(Name: foodName, Quantity: foodQuantity, Unit: foodUnit, Category: foodCategory, ExpiryDate: foodExpiryDate, Emoji: foodEmoji))
+                        Ingredient.foods.append(Ingredient(Name: foodName, Quantity: foodQuantity, Unit: foodUnit, Category: foodCategory, ExpiryDate: foodExpiryDate, Emoji: foodEmoji))
                         foodName = ""
                         foodQuantity = 0
                         foodUnit = ""
@@ -61,7 +61,7 @@ struct ContentView: View {
                         foodExpiryDate = ""
                         foodEmoji = ""
                         
-                        tempIngredientIndex = foods.count - 1
+                        tempIngredientIndex = Ingredient.foods.count - 1
    
     
                     }
