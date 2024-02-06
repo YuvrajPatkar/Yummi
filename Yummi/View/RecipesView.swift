@@ -8,7 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct RecipesView {
+struct RecipesView: View {
+    var body: some View {
+        Text("Hello world")
+    }
+    
     
 }
 
+#Preview {
+    RecipesView()
+}
