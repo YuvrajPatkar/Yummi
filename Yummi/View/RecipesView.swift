@@ -10,7 +10,13 @@ import SwiftUI
 
 struct RecipesView: View {
     var body: some View {
-        Text("Hello world")
+        VStack{
+            Text(Recipe.recipes[0].Name)
+            
+            
+            
+            
+        }
     }
     
     
