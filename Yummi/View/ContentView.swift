@@ -11,7 +11,9 @@ struct ContentView: View {
     @State private var isRecipesView: Bool = true
     var body: some View {
         VStack {
+            
             Toggle("Show Ingredients", isOn: $isRecipesView)
+                .padding(.horizontal,5)
             if isRecipesView {
                 RecipesView(recipes: Recipe.recipes)
             }
