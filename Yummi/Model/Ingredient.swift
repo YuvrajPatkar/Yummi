@@ -26,7 +26,7 @@ struct Ingredient {
         )
     }
     #if DEBUG
-    static var foods: [Ingredient] = [Ingredient(Name: "Cheese", Quantity: 100, Unit: "Grams", Category: "Dairy", ExpiryDate: "08.02.24", Emoji: "🧀"),
+    static var foods: [Ingredient] =          [Ingredient(Name: "Cheese", Quantity: 100, Unit: "Grams", Category: "Dairy", ExpiryDate: "08.02.24", Emoji: "🧀"),
                                              Ingredient(Name: "Juice", Quantity: 1, Unit: "Litre", Category: "Fruit", ExpiryDate: "12.03.24", Emoji: "🧃" ),
                                             Ingredient(Name: "Sushi", Quantity: 15, Unit: "Pieces", Category: "Seafood", ExpiryDate: "07.02.24", Emoji: "🍣"),
                                              Ingredient(Name: "Bread", Quantity: 15, Unit: "Loaves", Category: "Grain", ExpiryDate: "06.04.24", Emoji: "🍞")]

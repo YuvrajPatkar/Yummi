@@ -9,13 +9,12 @@ import Foundation
 import SwiftUI
 
 struct RecipesView: View {
+    var recipes: [Recipe]
+    
     var body: some View {
-        VStack{
-            Text(Recipe.recipes[0].Name)
-            
-            
-            
-            
+        List {
+            ForEach(recipes) {recipe in
+                Text(recipe.displayInfo())}
         }
     }
     
@@ -23,5 +22,5 @@ struct RecipesView: View {
 }
 
 #Preview {
-    RecipesView()
+    RecipesView(recipes: Recipe.recipes)
 }
