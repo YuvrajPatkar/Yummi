@@ -38,8 +38,7 @@ struct IngredientsView: View {
                     }
                 }
             }
-            .padding()
-            Form {
+            Form{
                 VStack{
                     Text("New food")
                     TextField("Food Name", text: $foodName)

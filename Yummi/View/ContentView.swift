@@ -13,7 +13,7 @@ struct ContentView: View {
         VStack {
             
             Toggle("Show Ingredients", isOn: $isRecipesView)
-                .padding(.horizontal,5)
+                .padding(.horizontal,20)
             if isRecipesView {
                 RecipesView(recipes: Recipe.recipes)
             }
