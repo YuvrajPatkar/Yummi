@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct RecipesView: View {
+    
+    
     var recipes: [Recipe]
     
     var body: some View {

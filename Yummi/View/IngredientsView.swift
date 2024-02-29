@@ -11,14 +11,7 @@ import Foundation
 
 struct IngredientsView: View {
     
-    @State private var tempIngredientIndex = 0
-    @State private var foodName = ""
-    @State private var foodQuantity = 0
-    @State private var foodUnit = ""
-    @State private var foodCategory = ""
-    @State private var foodExpiryDate = ""
-    @State private var foodEmoji = ""
-    
+    @StateObject var ingredientsViewModel: IngredientsViewModel = IngredientsViewModel()
     
     
     var body: some View {
@@ -26,14 +19,14 @@ struct IngredientsView: View {
             alignment: .leading, spacing: 20) {
             Form {
                 VStack() {
-                    Text(Ingredient.foods[tempIngredientIndex].displayStats())
-                    Text(Ingredient.foods[tempIngredientIndex].Emoji)
+                    Text(Ingredient.foods[ingredientsViewModel.tempIngredientIndex].displayStats())
+                    Text(Ingredient.foods[ingredientsViewModel.tempIngredientIndex].Emoji)
                         .font(.system(size: 100))
                     Button("Next food") {
-                        if tempIngredientIndex == Ingredient.foods.count - 1{
-                            tempIngredientIndex = 0
+                        if ingredientsViewModel.tempIngredientIndex == Ingredient.foods.count - 1{
+                            ingredientsViewModel.tempIngredientIndex = 0
                         } else {
-                            tempIngredientIndex += 1
+                            ingredientsViewModel.tempIngredientIndex += 1
                         }
                     }
                 }
@@ -41,25 +34,17 @@ struct IngredientsView: View {
             Form{
                 VStack{
                     Text("New food")
-                    TextField("Food Name", text: $foodName)
-                    Stepper("Food Quantity: \(foodQuantity)" , value: $foodQuantity, in: 0...Int.max)
-                    TextField("Food Unit", text: $foodUnit)
-                    TextField("Food Category", text: $foodCategory)
-                    TextField("Food Expiry Date", text: $foodExpiryDate)
-                    TextField("Food Emoji", text: $foodEmoji)
+                    TextField("Food Name", text: $ingredientsViewModel.foodName)
+                    Stepper("Food Quantity: \(ingredientsViewModel.foodQuantity)" , value: $ingredientsViewModel.foodQuantity, in: 0...Int.max)
+                    TextField("Food Unit", text: $ingredientsViewModel.foodUnit)
+                    TextField("Food Category", text: $ingredientsViewModel.foodCategory)
+                    TextField("Food Expiry Date", text: $ingredientsViewModel.foodExpiryDate)
+                    TextField("Food Emoji", text: $ingredientsViewModel.foodEmoji)
                 
                 }
                     
                     Button("Add Ingredient") {
-                        Ingredient.foods.append(Ingredient(Name: foodName, Quantity: foodQuantity, Unit: foodUnit, Category: foodCategory, ExpiryDate: foodExpiryDate, Emoji: foodEmoji))
-                        foodName = ""
-                        foodQuantity = 0
-                        foodUnit = ""
-                        foodCategory = ""
-                        foodExpiryDate = ""
-                        foodEmoji = ""
-                        
-                        tempIngredientIndex = Ingredient.foods.count - 1
+                        ingredientsViewModel.addNewIngredient()
    
     
                     }

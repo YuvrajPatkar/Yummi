@@ -14,7 +14,7 @@ struct ContentView: View {
             
             Toggle("Show Ingredients", isOn: $isRecipesView)
                 .padding(.horizontal,20)
-            if isRecipesView {
+            if !isRecipesView {
                 RecipesView(recipes: Recipe.recipes)
             }
             else {
