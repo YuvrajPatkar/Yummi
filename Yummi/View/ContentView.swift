@@ -10,17 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State private var isRecipesView: Bool = true
     var body: some View {
-        VStack {
-            
-            Toggle("Show Ingredients", isOn: $isRecipesView)
-                .padding(.horizontal,20)
-            if !isRecipesView {
-                RecipesView(recipes: Recipe.recipes)
-            }
-            else {
-                IngredientsView()
-            }
+        TabView{
+            IngredientsView()
+                .tabItem {
+                    Label("Pantry", systemImage: "ant.fill")
+                }
+            RecipesView(recipes: Recipe.recipes)
+                .tabItem {
+                    Label("Recipes", systemImage: "faceid")
+                }
         }
+    
     }
 }
 
