@@ -17,7 +17,7 @@ struct ContentView: View {
                 }
             SecretView()
                 .tabItem {
-                    Label(" ", systemImage: "circle.fill")
+                    Label(" ", systemImage: NSTemporaryDirectory())
                 }
             RecipesView(recipes: Recipe.recipes)
                 .tabItem {

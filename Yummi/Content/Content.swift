@@ -19,5 +19,4 @@ enum MassUnit: String {
     case cans
     case bottle
     
-    
 }
