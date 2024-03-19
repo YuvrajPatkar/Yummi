@@ -15,12 +15,15 @@ struct ContentView: View {
                 .tabItem {
                     Label("Pantry", systemImage: "ant.fill")
                 }
+            SecretView()
+                .tabItem {
+                    Label(" ", systemImage: "circle.fill")
+                }
             RecipesView(recipes: Recipe.recipes)
                 .tabItem {
                     Label("Recipes", systemImage: "faceid")
                 }
         }
-    
     }
 }
 
